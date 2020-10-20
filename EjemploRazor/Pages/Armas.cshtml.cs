@@ -20,6 +20,7 @@ namespace EjemploRazor.Pages
                     Arma ArmaFalsa = new Arma();
                     ArmaFalsa.Id = i;
                     ArmaFalsa.Nombre = "Arma " + i;
+                    ListaFalsaDeArmas.Add(ArmaFalsa);
                 }
                 return ListaFalsaDeArmas;
             }
