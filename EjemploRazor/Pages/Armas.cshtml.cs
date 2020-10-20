@@ -10,7 +10,7 @@ namespace EjemploRazor.Pages
 {
     public class ArmasModel : PageModel
     {
-        List<Arma> Armas
+        public List<Arma> Armas
         {
             get
             {
