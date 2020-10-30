@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EjemploRazor.Models;
+using EjemploRazor.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,23 +11,17 @@ namespace EjemploRazor.Pages
 {
     public class ArmasModel : PageModel
     {
-        public List<Arma> Armas
+        public IEnumerable<Arma> Armas { get; set; }
+        public JsonFileArmaService ArmaService;
+
+        public ArmasModel(JsonFileArmaService armaService)
         {
-            get
-            {
-                List<Arma> ListaFalsaDeArmas = new List<Arma>();
-                for (int i = 0; i < 10; i++)
-                {
-                    Arma ArmaFalsa = new Arma();
-                    ArmaFalsa.Id = i;
-                    ArmaFalsa.Nombre = "Arma " + i;
-                    ListaFalsaDeArmas.Add(ArmaFalsa);
-                }
-                return ListaFalsaDeArmas;
-            }
+            ArmaService = armaService;
         }
+
         public void OnGet()
         {
+            Armas = ArmaService.GetArmas();
         }
     }
 }

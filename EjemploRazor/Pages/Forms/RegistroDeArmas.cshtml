@@ -1,0 +1,13 @@
+﻿@page
+@model EjemploRazor.Pages.Forms.RegistroDeArmasModel
+@{
+}
+<h1>Registro de armas</h1>
+<form method="post">
+    <div class="form-group">
+        <input type"text" asp-for="Nombre" placeholder="Nombre del arma" class="form-control" />
+    </div>
+    <input type"text" asp-for="Img" placeholder="Imagen del arma" />
+    <button type="submit" class="btn btn-primary">Registrar</button>
+    <p>@Model.Mensaje</p>
+</form>

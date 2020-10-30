@@ -3,11 +3,14 @@
 @{
 }
 <h1>Lista de armas</h1>
-<div>
+<div class="card-columns">
     @foreach (var arma in Model.Armas)
     {
-        <div>
-            <h3>@arma.Nombre</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-img" style="background-image: url('@arma.Img')"></div>
+                <h3>@arma.Nombre</h3>
+            </div>   
         </div>
     }
 </div>
